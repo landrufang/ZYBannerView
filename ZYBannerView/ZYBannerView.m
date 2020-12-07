@@ -72,6 +72,9 @@ static NSString *banner_footer = @"banner_footer";
     self.flowLayout.itemSize = self.bounds.size;
     self.flowLayout.footerReferenceSize = CGSizeMake(ZY_FOOTER_WIDTH, self.frame.size.height);
     self.collectionView.frame = self.bounds;
+    if (@available(iOS 11.0, *)) {
+        self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
     [self.collectionView reloadData];
     
     // pageControl
